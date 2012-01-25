@@ -1,34 +1,32 @@
-PhoneGap API Demo with jQuery Mobile
+MDS PhoneGap API Demo with jQuery Mobile
 ====================
 
 January 25, 2012
 ------------
- * Version 1.0
- * PhoneGap v1.3.0
- * jQuery Mobile v1.0
-
+ * PhoneGap v1.3.0 - all APIs implemented
+ * jQuery Mobile v1.0 - includes Themeroller example, media queries for multiple screen sizes
  * Download to Android 2.1+ and 3.0+ Phone or Tablet
 
-[AppLaud Cloud](http://applaudcloud.com)
+Instructions for [AppLaud Cloud](http://applaudcloud.com)
 -------------
  * Download zip file
  * New > Import Project (and select zip file)
 
-[AppLaud Eclipse Plugin for PhoneGap / Android](http://www.mobiledevelopersolutions.com)
+Instructions for [AppLaud Eclipse Plugin for PhoneGap / Android](http://www.mobiledevelopersolutions.com)
 -------------
  * Download zip file
  * Project Creation Wizard
- * "Use Build-in PhoneGap"
+ * Select "Use Build-in PhoneGap"
  * (Don't select "Include jQuery Mobile libraries in project)
- * "Create project from specified source directory"
- * AND "Pure Import"
- * In unzipped bundle enter "assets/www/" as location
+ * Select "Create project from specified source directory"
+ * AND Select "Pure Import"
+ * From unzipped bundle, enter "assets/www/" as location
 
-Mobile Developer Solutions’ [AppLaud](http://www.mobiledevelopersolutions.com) (Open Source Eclipse Plugin for PhoneGap / Android) enables web developers to start developing for the mobile web quickly. 
+Mobile Developer Solutions’ [AppLaud](http://www.mobiledevelopersolutions.com) (Open Source Eclipse Plugin for PhoneGap / Android) enables web developers to start developing for the mobile web quickly in a hybrid Java/JavaScript environment. 
 
-Newly released cloud-based IDE, MDS AppLaud Cloud, enables PhoneGap development in the cloud - no downloads, installs or cables needed! Register for [AppLaud Cloud](http://applaudcloud.com) from your Chrome browser, download the [AppLaud App](//https://market.android.com/details?id=com.mds.applaud) to your Android device, and start developing!
+Newly released cloud-based IDE, MDS AppLaud Cloud, enables PhoneGap development in the cloud - no downloads, installs or cables needed. Register for [AppLaud Cloud](http://applaudcloud.com) from your Chrome browser, download the [AppLaud App](https://market.android.com/details?id=com.mds.applaud) to your Android device, and start developing!
 
-PhoneGap API Demo with jQuery Mobile by Mobile Developer Solutions and its Contents available under the terms of the MIT License 2008. Some modules may not be the copyright of Mobile Developer Solutions. These modules contain explicit declarations at their source of origin and in the code itself. No external contributions are allowed under licenses which are fundamentally incompatible with the MIT license that GMap Demo is distributed under.
+MDS PhoneGap API Demo with jQuery Mobile by Mobile Developer Solutions and its contents available under the terms of the MIT License 2008. Some modules may not be the copyright of Mobile Developer Solutions. These modules contain explicit declarations at their source of origin and in the code itself. No external contributions are allowed under licenses which are fundamentally incompatible with the MIT license that GMap Demo is distributed under.
 
 The MIT License
 ----------------
