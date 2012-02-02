@@ -1,11 +1,11 @@
 MDS PhoneGap API Demo with jQuery Mobile
 ====================
 
-January 25, 2012
+February 2, 2012
 ------------
- * PhoneGap v1.3.0 - all APIs implemented
- * jQuery Mobile v1.0 - includes Themeroller example, media queries for multiple screen sizes
- * Download to Android 2.1+ and 3.0+ Phone or Tablet
+ * PhoneGap v1.4.0 - all APIs implemented
+ * jQuery Mobile v1.0.1 + Media queries for multiple screen sizes
+ * For Android 2.1+ and 3.0+ Phones or Tablets
 
 Instructions for [AppLaud Cloud](http://applaudcloud.com)
 -------------
