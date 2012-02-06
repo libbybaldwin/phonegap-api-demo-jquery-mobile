@@ -1,0 +1,310 @@
+/* Some tablets mis-report orientation, leaving white at bottom: */
+body { background-color: #d1d1d1;}
+
+h2 {
+	border-bottom: 1px solid #b3b3b3;
+	font-size: 1.4em; /* 1.6em; */
+	font-weight: normal;
+	margin: 0.3em 0px 0.6em 0px; 
+	padding-bottom: 0.1em;
+	color: #114a80;
+}
+h3 { 
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0.8em 0px 0.5em 0px;
+	text-shadow: #FFFFFF 0px 1px 1px;
+}
+.api-div {
+ 	color: #202020;
+ 	font-size: 0.9em;
+ 	font-style: normal;
+ 	text-decoration: none;
+	margin-bottom: 2.0em;
+}
+code { 
+	font-weight: bold; 
+	font-size: 1.1em;
+	color: #114a80;
+}
+blockquote {
+	color: #767573;
+	font-style: normal;
+	margin-left: 25px; 
+	padding-left: 10px;
+	position: relative;
+	text-shadow: #FFFFFF 0px 1px 0px;
+}
+blockquote code {
+	color: #ce7929;
+}
+blockquote p {
+	padding: 0;
+	font-size: 0.8em;
+}
+blockquote::before {
+	font-style: normal;
+	content: '\201C';
+	font-size: 400%; 
+	font-family: Georgia, Palatino, 'Times New Roman', Times;;
+	position: absolute;
+	left: -20px;
+	top: -0.3em;
+	color: #cecece;
+}
+#copyright {
+	font-size: .75em;
+	color: #8b8b8b;
+	text-shadow: none;
+	}
+#deviceinfo {
+	border-collapse: collapse;
+	width: 95%;
+	margin: 20px auto;
+}
+#deviceinfo tr th.alt, #deviceinfo tr td.alt {
+	text-align:left;
+}
+#deviceinfo, th, td {
+	border: 1px solid #0c4982;
+}
+#deviceinfo th {
+	font-size:1.15em;
+	padding-top:4px;
+	padding-bottom:4px;
+	background-color:#7ba3c9;
+	color:#f0f0f0;
+	text-shadow: none;
+	height: 1.3em;
+}
+#deviceinfo td, #deviceinfo th {
+	padding:3px 7px 2px 7px;
+	vertical-align:bottom;
+	text-align:right;
+}
+#cameraImage {
+	border: 2px solid #666;
+	display: block;
+ 	visibility: hidden; 
+	margin: 0.7em auto;
+	width:200px;
+	height:150px;
+}
+#eventOutput {
+	height:1.5em;
+	display: block;
+}
+.ui-btn-inner { 
+	padding: .6em 8px; /*25px;*/
+}
+.wider-btn .ui-btn-inner {
+	padding: .6em 1.8em; 	
+}
+.ui-grid-a, .ui-grid-b {
+	margin: 0.4em 0px;
+}
+#map {
+	width: 180px; 
+	height: 140px; 
+	border: 2px solid #666;
+ 	display: block;
+ 	visibility: hidden; 
+	margin: 1.0em auto; 
+}
+.ui-header .ui-title {
+	margin-right:20px;
+	margin-left:20px;
+}
+.type-interior .content-secondary {
+	border-right: 0;
+	border-left: 0;
+ 	margin: 0 -15px;
+}
+.type-interior .ui-content {
+	border-top: 1px solid #3f80bc;
+	/* padding-bottom: 0; */
+}
+.content-secondary .ui-collapsible {
+	padding: 0 15px 10px;
+	margin: 0;
+}
+.content-secondary .ui-collapsible-content {
+	padding: 0;
+	border-bottom: none;
+}
+.content-secondary .ui-listview {
+	margin: 0;
+}
+.footer-docs {
+	display: none;
+}
+.footer-docs p {
+	float: left;
+	margin-left:15px;
+	font-weight: normal;
+	font-size: .9em !important;
+}
+ul #listdivider {
+	font-size: 1.0em;;
+	border-top-width: 0px;
+	display: none;
+}
+.api-div h4 {
+ 	display: block; 
+ 	font-size: 0.8em !important; 
+ 	font-weight: normal; 
+ 	background: #eef; 
+ 	border-left: 6px solid #f62c0b;
+ 	padding: 5px 8px;
+ 	margin: .5em 0px;
+}
+.api-div .help {
+ 	border-left: 6px solid #188f69;
+}
+
+@media all and (min-width: 500px) and (orientation:landscape), 
+				(min-width: 800px) and (orientation:portrait) 
+				{	
+/*	h1 { color: #f00; }   FOR TESTING */
+	h2 {
+		font-size: 1.2em;
+		margin: 0.2em 0px 0.3em;
+	}
+	.api-div {
+ 		font-size: 1.0em;
+	}
+	ul #listdivider {
+		padding-top: .6em;
+		padding-bottom: .6em;
+		display: block;
+	}
+	.type-interior .ui-content {
+		padding: 0;
+	}
+	.type-interior .ui-content {
+		overflow: hidden;
+	}
+	.content-secondary {
+		text-align: left;
+		float: left;
+		width: 31%;
+		background: none;
+	}
+	.content-secondary,
+	.type-interior .content-secondary {
+		margin: 30px 0 20px 2%;
+		padding: 20px 4% 0 0;
+		border-top: none;
+	}
+	.content-secondary .ui-collapsible {
+		margin: 0;
+		padding: 0;
+	}
+	.content-secondary .ui-collapsible-content {
+		border: none;
+	}
+	.content-primary {
+		width: 65%;		/* left */
+		float: right;
+		margin-right: 1%;
+		padding-right: 1%;
+	}
+	.type-interior .content-primary {
+		padding: 0.5em 3% 1.5em 0; /* right */
+		margin: 0;
+	}
+	/* fix up the collapsibles - expanded on desktop */
+	.content-secondary .ui-collapsible-heading {
+		display: none;
+	}
+	.content-secondary .ui-collapsible-contain {
+		margin:0;
+	}
+	.content-secondary .ui-collapsible-content {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+	.type-interior .content-secondary .ui-li-divider {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	.type-interior .content-secondary {
+		margin: 0;
+		padding: 0;
+	}
+}
+@media all and (min-width: 800px){
+/*	h1 { color: #0f0; }  FOR TESTING */
+	h2 {
+		border-bottom: 2px solid #b3b3
+		b3;
+		font-size: 2.0em;
+		margin: 0.6em 0px 0.8em;
+		font-weight: bold;		
+	}
+	.api-div {
+ 		font-size: 1.2em;
+	}
+	blockquote { 
+		padding-left: 20px;
+	}
+	blockquote p {
+		font-size: .9em;
+	}
+	.content-secondary {
+		width: 30%;
+	}
+	.content-primary {
+		width: 60%;
+		padding-right: 1%;
+	}	
+ 	.type-interior .content-primary {
+		padding-right: 5%;
+	} 
+	.footer-docs {
+		display: block;
+	}
+	ul #listdivider {
+		padding-top: 1.0em;
+		padding-bottom: 1.0em;
+	}
+	#deviceinfo {
+		width: 85%;
+	}
+	#cameraImage {
+		width:400px;
+		height:300px;
+    }
+    #map {
+		width: 360px; 
+		height: 280px; 
+	}
+}
+
+@media all and (min-width: 1200px){
+ /*	h1 { color: #ff0; } FOR TESTING */
+		.content-secondary {
+		width: 30%;
+		padding-right:6%;
+		margin: 30px 0 20px 5%;
+	}
+	.type-interior .content-secondary {
+		margin: 0;
+		padding: 0;
+	}
+	.content-primary {
+		width: 50%;
+		margin-right: 5%;
+		padding-right: 3%;
+	}
+	.type-interior .content-primary {
+		width: 60%;
+	}
+	#deviceinfo {
+		width:60%;
+	}
+	#deviceinfo td, #deviceinfo th {
+		font-size: 1.1em;
+	}
+}

@@ -1,0 +1,344 @@
+<!-- Copyright (c) 2012 Mobile Developer Solutions -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <title>MDS PhoneGap API Demo with jQuery Mobile</title>
+
+ 	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" href="index.css" /> 
+
+    <script src="jquery.mobile/jquery-1.6.4.min"></script>
+	<script src="jquery.mobile/jquery.mobile-1.0.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+	<script type="text/javascript" charset="utf-8" src="index.js"></script>
+  </head>
+  
+  <body onload="init();">
+	<div data-role="page" class="type-interior" data-theme="b">
+
+	<div data-role="header" data-theme="b">
+		<h1>MDS PhoneGap API Demo</h1>
+ 		<a href="#" data-icon="home" data-iconpos="notext" id="intro" class="ui-btn-right">intro</a>
+	</div>
+
+	<div data-role="content" data-theme="c">			
+		<div class="content-secondary">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b">
+				<h3>PhoneGap API</h3>
+
+				<ul data-role="listview" data-theme="b" data-dividertheme="b">
+					<li id="listdivider" data-role="list-divider">PhoneGap API</li>
+					<li><a href="#api-accelerometer">Accelerometer</a></li>
+					<li><a href="#api-camera">Camera</a></li>
+					<li><a href="#api-capture">Capture</a></li>
+					<li><a href="#api-compass">Compass</a></li>
+ 					<li><a href="#api-connection">Connection</a></li>
+					<li><a href="#api-contacts">Contacts</a></li>
+					<li><a href="#api-device">Device</a></li>
+					<li><a href="#api-events">Events</a></li>
+					<li><a href="#api-file">File</a></li>
+					<li><a href="#api-geolocation">Geolocation</a></li>
+					<li><a href="#api-media">Media</a></li>
+					<li><a href="#api-notification">Notification</a></li>
+					<li><a href="#api-storage">Storage</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content-primary">
+		    <div class="api-div" id="api-intro">
+		         <h2>PhoneGap</h2>
+				<blockquote>
+  					<p>An HTML5 app platform that allows you to author native applications with web technologies and get access to APIs and app stores.</p>
+				</blockquote>
+
+				<div>
+				<h4>Select a <strong>PhoneGap API </strong>to see it demonstrated.</h4>
+				<h4 class="help">See <strong>assets/www/apis/</strong> for JavaScript implementations of each API.</h4>
+				
+				<p id="copyright">&copy; 2012 Mobile Developer Solutions</p>
+				</div>		    					
+			</div>
+
+		    <div class="api-div" id="api-accelerometer">
+		         <h2>Accelerometer</h2>
+				<blockquote>
+  					<p>Captures device motion in the x, y, and z direction.</p>
+				</blockquote>
+				<h4 class="help"><b>Toggle</b> to stop/start
+				accelerometer watch.<br/><b>Get Current</b> for one-time accelerometer reading.</h4>
+				<div class="ui-grid-b">
+     	 				<div class="ui-block-a">X: <b id="x">&nbsp;</b></div>
+     	 				<div class="ui-block-b">Y: <b id="y">&nbsp;</b></div> 
+     	 				<div class="ui-block-c">Z: <b id="z">&nbsp;</b></div>
+    				</div>
+    				<div>Timestamp: <b id="accel_timestamp">0</b></div>   			    
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><div data-role="button" onclick="toggleAccel();">Toggle</div></div>
+					<div class="ui-block-b"><div data-role="button" onclick="getAccel();">Get Current</div></div>	   
+				</div>				
+			</div>
+
+		    <div class="api-div" id="api-camera">
+                <h2>Camera</h2>
+				<blockquote>
+  					<p>The <code>camera</code> object provides access to the device's default camera application.</p>
+				</blockquote>
+				<h4 class="help"><b>Take a Picture</b> using device camera.<br/>
+				<b>Select</b> to get picture from album or library.</h4>
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><div data-role="button" onclick="take_pic();">Take a Picture</div></div>
+					<div class="ui-block-b"><div data-role="button" onclick="album_pic();">Select</div></div>
+				</div>				
+      			<img id="cameraImage" src="" />
+			</div>
+
+		    <div class="api-div" id="api-capture">
+				<h2>Capture</h2>
+				<blockquote>
+					<p>Provides access to the audio, image, and video capture capabilities of the device.</p>
+				</blockquote>
+				<div class="ui-grid-b">
+					<div class="ui-block-a"><div data-role="button" onclick="captureAudio();">Audio</div></div>
+					<div class="ui-block-b"><div data-role="button" onclick="captureImage();">Image</div></div>
+					<div class="ui-block-c"><div data-role="button" onclick="captureVideo();">Video</div></div>
+				</div>				
+				<div>Capture Result: <span id="capture-result"></span><br/>
+				<span id="format-data"></span><br/>
+				</div>
+			</div>
+
+		    <div class="api-div" id="api-compass">
+				<h2>Compass</h2>
+				<blockquote>
+					<p>Obtains the direction that the device is pointing.</p>
+				</blockquote>
+				<h4 class="help"><b>Toggle</b> to stop/start
+				compass watch. <br/><b>Get Current</b> for one-time compass reading.</h4>
+
+				<!-- <h4 class="help"><code>Toggle Compass</code> to stop/start
+				compass watch. <br/><code>Get Current</code> for one-time compass reading.</h4> -->
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><div data-role="button" onclick="toggleCompass();">Toggle</div></div>
+					<div class="ui-block-b"><div data-role="button" onclick="getCurrentHeading();">Get Current</div></div>
+				</div>
+				<div>
+     	 		Compass Heading: <b id="heading"></b>
+     	 		</div>
+    		</div>
+
+		    <div class="api-div" id="api-connection">
+				<h2>Connection</h2>
+				<blockquote>
+  					<p>The <code>connection</code> object gives access to the device's cellular and wifi connection information.</p>
+				</blockquote>
+   				<div data-role="button" onclick="check_network();">Check Connection</div>
+   				<div>Connection: <b id="connection"></b></div>    
+			</div>
+
+		    <div class="api-div" id="api-contacts">
+				<h2>Contacts</h2>
+				<blockquote>
+  					<p>The <code>contacts</code> object provides access to the device contacts database.</p>
+				</blockquote>
+   				<div data-role="button" onclick="get_contacts();">Check Contacts</div>
+   				<div id="contacts-output"></div>
+			</div>
+
+		    <div class="api-div" id="api-device">
+				<h2>Device</h2>
+				<blockquote>
+					<p>The <code>device</code> object describes the device's hardware and software.</p>
+				</blockquote>
+				<h4><strong>Important</strong> Access <code>device</code> object only after <code>deviceready</code> event.</h4>
+      			<table id="deviceinfo">
+  					<tr>
+   					 	<th>Device</th>
+   					 	<th class="alt">Value</th>
+  					</tr>
+  					<tr>
+    					<td>Name</td>
+    					<td class="alt"><strong id="name">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>Platform</td>
+   					 	<td class="alt"><strong id="platform">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>PhoneGap Version</td>
+   					 	<td class="alt"><strong id="pgversion">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>UUID</td>
+   					 	<td class="alt"><strong id="uuid">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>OS Version</td>
+   					 	<td class="alt"><strong id="version">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+   					 	<th>Screen</th>
+   					 	<th class="alt">Value</th>
+  					</tr>
+  					<tr>
+    					<td>Width</td>
+    					<td class="alt"><strong id="width">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Height</td>
+    					<td class="alt"><strong id="height">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Available Width</td>
+    					<td class="alt"><strong id="availwidth">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Available Height</td>
+    					<td class="alt"><strong id="availheight">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Color Depth</td>
+    					<td class="alt"><strong id="colorDepth">&nbsp;</strong></td>
+  					</tr> 					
+				</table>							
+			</div>
+
+		    <div class="api-div" id="api-events">
+				<h2>Events</h2>
+				<blockquote>
+					<p>PhoneGap lifecycle events.</p>
+				</blockquote>
+				<h4 class="help">Tap device (or virtual device) <code>menu</code> or <code>search</code> buttons to see example callback output.</h4>
+				<span id="eventOutput"></span>
+				<h4>Other <code>event</code> example callbacks use console.log</h4>								
+			</div>
+
+		    <div class="api-div" id="api-file">
+				<h2>File</h2>
+				<blockquote>
+					<p>An API to read, write and navigate file system hierarchies.</p>
+				</blockquote>
+				<div id="file-system-text"></div>
+				<fieldset class="ui-grid-a">				
+ 					<div class="ui-block-a">
+ 						<div data-role="button" onclick="createFile();">Create</div>
+ 					</div>
+ 					<div class="ui-block-b">
+ 						<div data-role="button" onclick="writeFile();">Write</div>
+ 					</div>
+   					<span id="file-status">Status:</span>
+   					<span id="file-contents"></span>
+   				</fieldset>
+				<fieldset class="ui-grid-a">				
+ 					<div class="ui-block-a">
+   						<div data-role="button" onclick="readFile();">Read</div>
+   					</div>
+ 					<div class="ui-block-b">
+ 						<div data-role="button" onclick="removeFile();">Remove</div>
+ 					</div>
+   					Read text: <span id="file-read-text"></span><br/>
+   					Data Url: <span id="file-read-dataurl"></span>
+   				</fieldset>
+			</div>
+
+		    <div class="api-div" id="api-geolocation">
+				<h2>Geolocation</h2>
+				<blockquote>
+  					<p>The <code>geolocation</code> object provides access to the device's GPS sensor.</p>
+				</blockquote>
+				<h4 class="help"><b>Toggle</b> to stop/start
+				geolocation watch. <br/><b>Get Current</b> for one-time geolocation reading.</h4>
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><div data-role="button" onclick="toggleWatchPosition();">Toggle</div></div>
+					<div class="ui-block-b"><div data-role="button" onclick="getCurrentPosition();">Get Current</div></div>
+				</div>
+   				<div id="cur_position"></div>
+   				<img id="map"/>								
+			</div>
+
+		    <div class="api-div" id="api-media">
+				<h2>Media</h2>
+				<blockquote>
+  					<p>The <code>Media</code> object provides the ability to record and play back audio files on a device. </p>
+				</blockquote>
+				<b>Play MP3 Song</b>
+				<div data-role="controlgroup" data-type="horizontal">				
+					<div data-role="button" id="playaudio" class="wider-btn" data-theme="b">&nbsp;Play&nbsp;</div>
+					<div data-role="button" id="pauseaudio" class="wider-btn" data-theme="b">Pause</div>
+					<div data-role="button" id="stopaudio" class="wider-btn" data-theme="b">&nbsp;Stop&nbsp;</div>	
+				<div class="ui-grid-a">
+					<div class="ui-block-a"> Current: <span id="audio_position">0 sec</span></div>
+					<div class="ui-block-b">Total: <span id=media_dur>0</span> sec</div>
+				</div>
+				</div>
+				<b>Live Audio Recording (5 sec)</b>
+ 				<div data-role="controlgroup" data-type="horizontal">	
+ 					<div data-role="button" id="startRecord" class="wider-btn" data-theme="b">Record Audio</div>
+ 					<div data-role="button" id="playbackRecord" class="wider-btn" data-theme="b">&nbsp;Playback&nbsp;</div>
+				<div class="ui-grid-a">
+   					<div class="ui-block-a">Status: <span id="record-status"></span></div>
+   					<div class="ui-block-b"><span id="record-time"></span></div>
+   				</div>
+				</div>
+			</div>
+
+		    <div class="api-div" id="api-notification">
+				<h2>Notification</h2>
+				<blockquote>
+  					<p>Visual, audible, and tactile device notifications.</p>
+				</blockquote>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><button onclick="showAlert();" data-theme="c" data-icon="alert">Alert</button></div>
+					<div class="ui-block-b"><button onclick="showConfirm();" data-theme="c" data-icon="check">Confirm</button></div>	   
+				</fieldset>				
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><button onclick="beep();" data-theme="b">Beep</button></div>
+					<div class="ui-block-b"><button onclick="vibrate();" data-theme="b">Vibrate</button></div>	   
+				</fieldset>				
+			</div>
+
+		    <div class="api-div" id="api-storage">
+				<h2>Storage</h2>
+				<blockquote>
+  					<p>Provides access to the devices storage options.</p>
+				</blockquote>
+				<h4 class="help">Based on <strong>W3C Web SQL Database Spec</strong> and <strong>W3C Web Storage API Spec</strong></h4>							
+				<div data-role="controlgroup">
+					<div data-role="button" onclick="createDB();">Create DB</div>
+					<div data-role="button" onclick="getSqlResultSet();">SQL Result Set</div>
+					<div class="ui-grid-a">
+					SQL Result: <br/><span id="sql-result"></span><br/>
+					</div>
+				</div>
+				
+				<div data-role="controlgroup">
+					<div data-role="button" onclick="writeLocalStorage();">Write LocalStorage</div>
+					<div data-role="button" onclick="readLocalStorage();">Read LocalStorage</div>
+					<div data-role="button" onclick="removeItemLocalStorage();">Remove Item</div>
+					<div class="ui-grid-a">
+					Local Storage: <span id="local-storage-result"></span><br/>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed" class="footer-docs" data-theme="b">
+		<p>&copy; 2012 Mobile Developer Solutions</p>
+	</div>	
+	</div>	
+	<script type="text/javascript" charset="utf-8" src="apis/accelerometer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/camera.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/capture.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/compass.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/connection.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/contacts.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/device.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/events.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/file.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/geolocation.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/media.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/notification.js"></script>
+	<script type="text/javascript" charset="utf-8" src="apis/storage.js"></script> 			
+  </body>
+</html>
