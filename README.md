@@ -14,14 +14,8 @@ Instructions for [AppLaud Cloud](http://applaudcloud.com)
 
 Instructions for [AppLaud Eclipse Plugin for PhoneGap / Android](http://www.mobiledevelopersolutions.com)
 -------------
- * **Coming Soon** This will be the default project for PhoneGap API Demo w/jQuery Mobile
- * Download zip file
- * Project Creation Wizard
- * Select "Use Build-in PhoneGap"
- * (Don't select "Include jQuery Mobile libraries in project)
- * Select "Create project from specified source directory"
- * AND Select "Pure Import"
- * From unzipped bundle, enter "assets/www/" as location
+ * This is default project for PhoneGap API Demo w/jQuery Mobile
+ * Select **Use PhoneGap example source as template for project with jQuery Mobile** in project creation wizard
 
 ## Other Versions
  * [PhoneGap API Demo](https://github.com/libbybaldwin/phonegap-api-demo) (without jQuery Mobile)
