@@ -66,6 +66,21 @@ var onDeviceReady = function() {
     // api-camera  Photo URI
     pictureSource=navigator.camera.PictureSourceType;
     destinationType=navigator.camera.DestinationType;
+       
+    // The Samsung Galaxy Tab 10.1 is currently the only device known to
+    // support orientation/change correctly and reliably.
+    if (device.name === "GT-P7510") {
+        var updateScreen = function() {
+            document.getElementById("width").innerHTML = screen.width;
+            document.getElementById("height").innerHTML = screen.height;
+            document.getElementById("availwidth").innerHTML = screen.availWidth;
+            document.getElementById("availheight").innerHTML = screen.availHeight;        
+        };         
+        window.addEventListener("orientationchange", function(e){
+            //console.log("window.orientation: " + window.orientation);
+            updateScreen();
+        }, false);
+    }
 };
 
 function init() {
