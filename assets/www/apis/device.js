@@ -25,8 +25,9 @@ function onBackbutton() {
         //console.log("Exiting app");
         //navigator.app.exitApp();
 
-	// Use the following (comment out above) for AppLaud Cloud
-	navigator.app.backHistory();
+        // Use the following for AppLaud Cloud Project Run
+        document.removeEventListener("backbutton", onBackbutton, false);        
+        navigator.app.backHistory();
     } else {    
         $('.api-div').hide();
         $('.api-div#api-intro').show();
