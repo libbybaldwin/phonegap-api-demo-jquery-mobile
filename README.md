@@ -1,20 +1,20 @@
 MDS PhoneGap API Demo with jQuery Mobile
 ====================
 
-February 5, 2012
+February 9, 2012
 ------------
- * PhoneGap v1.4.0 - all APIs implemented
+ * PhoneGap v1.4.1 - all APIs implemented
  * jQuery Mobile v1.0.1 + Media queries for multiple screen sizes
  * For Android 2.1+ and 3.0+ Phones or Tablets
 
 Instructions for [AppLaud Cloud](http://applaudcloud.com)
 -------------
- * Download zip file
- * New > Import Project (and select zip file)
+ * *This is the default PhoneGap API Demo w/jQuery Mobile and Template in AppLaud Cloud Alpha 3*
+ * **OR** Download zip file, in AppLaud Cloud: New > Import Project (and select zip file)
 
 Instructions for [AppLaud Eclipse Plugin for PhoneGap / Android](http://www.mobiledevelopersolutions.com)
 -------------
- * This is default project for PhoneGap API Demo w/jQuery Mobile
+ * *This is default project for PhoneGap API Demo w/jQuery Mobile in AppLaud Eclipse v1.2.7*
  * Select **Use PhoneGap example source as template for project with jQuery Mobile** in project creation wizard
 
 ## Other Versions
