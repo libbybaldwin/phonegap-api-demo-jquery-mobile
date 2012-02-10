@@ -1,8 +1,5 @@
 MDS PhoneGap API Demo with jQuery Mobile
 ====================
-
-February 9, 2012
-------------
  * PhoneGap v1.4.1 - all APIs implemented
  * jQuery Mobile v1.0.1 + Media queries for multiple screen sizes
  * For Android 2.1+ and 3.0+ Phones or Tablets
